@@ -1,0 +1,11 @@
+{% extends 'livestock/hello.html' %}
+{% block content %}
+<h2>You can reach us directly via this form</h1>
+<h3>Contact via: email-ikedestiny@gmail.com</h3>
+<form action="" method="post" >
+    {% csrf_token %} 
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

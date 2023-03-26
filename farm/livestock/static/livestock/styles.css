@@ -1,0 +1,32 @@
+body{
+    color: goldenrod;
+    background-image: url('images/back.jpg');
+    
+    
+}
+h1{
+    padding: 0%;
+    text-align: center;
+    font-size: 150px;
+    color: gold;
+}
+
+h3{
+    padding: 0%;
+    font-family: serif;
+    font-style: italic;
+    padding-right: 0% ;
+
+    
+}
+
+a{
+    color: azure;
+}
+
+h2{
+    color:rgb(255, 8, 0);
+}
+.nav_bar{
+        background-color: rgb(113, 113, 238);
+}

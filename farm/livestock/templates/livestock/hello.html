@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+    <head>
+            <title>Ike Farm</title>
+            <h1>
+                Ike Farm
+               
+            </h1>
+            
+            <link rel="stylesheet" href="{% static 'livestock/styles.css' %}">
+        <nav class='nav_bar'>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'contact-page' %}">Contact Us</a>
+            <a href="{% url 'order-form' %}">Make Order</a>
+        </nav>
+            
+    </head>
+    <body>
+       
+        {% block content %}{% endblock %}
+    </body>
+</html>

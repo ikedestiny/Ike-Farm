@@ -1,0 +1,13 @@
+{% extends 'livestock/hello.html' %}
+{% block content %}
+<h2>Order of: {{ Order.Name }}</h2>
+    <ul>
+        <li>Type: {{ Order.Order_Type }}</li>
+        <li>Description: {{ Order.Description }}</li>
+        <li>Date: {{ Order.Date }}</li>
+        <li>Phone: {{ Order.Phone_number }}</li>
+        <li>Deadline: {{ Order.Expected_order_recieve_date }}</li>
+        <li>Email: {{ Order.Email }}</li>
+    </ul>
+    <a href="{% url 'order-list' %}">Back to Order List</a>
+{% endblock %}
