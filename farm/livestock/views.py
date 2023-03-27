@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from livestock.models import order
+from livestock.models import order, stock
 from livestock.forms import contactUsForm, Customer_order_Form
 
 # Create your views here.
@@ -42,3 +42,9 @@ def order_list(request):
 def order_detail(request,id):
     Order = order.objects.get(id=id)
     return render(request, 'livestock/order_detail.html', {'Order':Order})
+
+
+
+def stock_detail(request,id):
+    Stock = stock.objects.get(id=id)
+    return render(request,'livestock/stock_detail.html',{'Stock':Stock})

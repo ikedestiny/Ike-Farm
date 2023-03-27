@@ -18,3 +18,10 @@ class order(models.Model):
     
     def __str__(self):
         return f'{self.Name}'
+    
+class stock(models.Model):
+    label = models.fields.CharField(max_length=50)
+    unit_price = models.fields.CharField(max_length=10)
+    quantity = models.fields.IntegerField()
+    image = models.ImageField(upload_to='media/', blank=True, null=True)
+    sold_out = models.fields.BooleanField()

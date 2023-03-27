@@ -28,6 +28,7 @@ urlpatterns = [
     path('make_order/', views.make_order,name='order-form' ),
     path('homepage/', views.homepage, name='home'),
     path('order_list/', views.order_list, name='order-list'),
-    path('order_detail/<int:id>/', views.order_detail,name='order-detail')
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
+    path('order_detail/<int:id>/', views.order_detail,name='order-detail'),
+    path('',views.homepage, name='home'),
+    path('stock_detail/<int:id>',views.stock_detail,name='stock-detail')
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
