@@ -1,12 +1,16 @@
 {% extends 'livestock/hello.html' %}
 {% block content %}
-<h2>{{ Stock.image}}</h2>
+<div>
 <ul>
+{% if Stock.image %}
+    <h2><img src="{{ Stock.image.url}}" width=500></h2>
+{% endif %}
+
     <l1>Label: {{Stock.label}}</l1>
 <li>unit_price: {{Stock.unit_price}}</l1>
 <l1>Quantity: {{Stock.quantity}}</l1>
 <l1>Sold_out: {{Stock.sold_out}}</l1>
 
 </ul>
-
+</div>
 {% endblock %}

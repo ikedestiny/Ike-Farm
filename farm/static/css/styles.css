@@ -37,3 +37,10 @@ h2{
 .nav_bar.headlink{
     text-align: end;
 }
+
+
+img{
+    float: left;
+    padding: 30px;
+}
+

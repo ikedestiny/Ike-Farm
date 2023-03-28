@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from livestock.models import order, stock
-from livestock.forms import contactUsForm, Customer_order_Form
+from livestock.forms import contactUsForm, Customer_order_Form, stockForm
 
 # Create your views here.
 def hello(request):
@@ -48,3 +48,19 @@ def order_detail(request,id):
 def stock_detail(request,id):
     Stock = stock.objects.get(id=id)
     return render(request,'livestock/stock_detail.html',{'Stock':Stock})
+
+def stock_list(request):
+    stocks = stock.objects.all()
+    return render(request, 'livestock/stock_list.html', {'stocks':stocks})
+
+def add_stock(request):
+    form = stockForm()
+    if request.method =='POST':
+        form = stockForm(request.POST)
+        if form.is_valid():
+            Stock = form.save()
+            
+            return redirect('stock-list')
+        else:
+            form = stockForm()
+    return render(request,'livestock/add_stock.html',{'form':form})

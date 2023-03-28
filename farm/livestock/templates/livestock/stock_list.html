@@ -1,0 +1,15 @@
+{% extends 'livestock/hello.html' %}
+{% block content %}
+<h2>List of Current Stock</h2>
+<ul>
+    {% for stock in stocks %}
+    <li class='stock_list'>{% if stock.image %}
+            <img src="{{ stock.image.url}}" width=300>
+        {% endif %}
+        <a href="{% url 'stock-detail' stock.id %}">{{stock.label}}</a>
+        
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
